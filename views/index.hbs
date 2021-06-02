@@ -8,10 +8,21 @@
     <link rel="icon" type="image/png" href="/favicon-16x16.png" />
 
     <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
 <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
+    {{!-- Container Will Fill Page Leaving Some Space in Horzontal direction --}}
+    {{!-- Row will make coloumns in row wise and maximum size of row is 12 column, if excided it will get to the next line --}}
+    {{!-- my-5 is for margin in y direction --}}
+    {{!-- py-5 is for padding in y direction --}}
+    {{!-- justify content center will make coloumns of row in center --}}
+    {{!-- text-center will make content of column in center --}}
+    {{!-- above all are bootstrap classes --}}
+    {{!-- row can come under col as well as container/ container-fluid --}}
+    {{!-- col will always come under row --}}
+    {{!-- container cannot be nested --}}
     <div class="container">
         <div class="row justify-content-center">
             <div class="col text-center my-5">
@@ -19,25 +30,35 @@
                     {{CrrTitle}} - {{CrrNum}}
                 </h3>
                 <p>
-                    
+                    {{CrrDate}}
                 </p>
             </div>
         </div>
 
-        <div class="row justify-content-center">
+        <div class="row justify-content-center mb-5">
             <div class="col-6 text-center">
-                <a href={{firstVal}}>
-                    <i class='bx bx-first-page'></i>
-                </a>
-                <a href={{prevVal}}>
-                    <i class='bx bx-skip-previous'></i>
-                </a>
-                <a href={{nextVal}}>
-                    <i class='bx bx-skip-next'></i>
-                </a>
-                <a href={{lastVal}}>
-                    <i class='bx bx-last-page'></i>
-                </a>
+                <div class="row">
+                    <div class="col">
+                        <a href={{firstVal}}>
+                            <i class='bx bx-first-page'></i>
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href={{prevVal}}>
+                            <i class='bx bx-skip-previous'></i>
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href={{nextVal}}>
+                            <i class='bx bx-skip-next'></i>
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href={{lastVal}}>
+                            <i class='bx bx-last-page'></i>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -47,20 +68,30 @@
             </div>
         </div>
 
-        <div class="row justify-content-center">
-             <div class="col-6 text-center">
-                <a href={{firstVal}}>
-                    <i class='bx bx-first-page'></i>
-                </a>
-                <a href={{prevVal}}>
-                    <i class='bx bx-skip-previous'></i>
-                </a>
-                <a href={{nextVal}}>
-                    <i class='bx bx-skip-next'></i>
-                </a>
-                <a href={{lastVal}}>
-                    <i class='bx bx-last-page'></i>
-                </a>
+        <div class="row justify-content-center mt-5">
+            <div class="col-6 text-center">
+                <div class="row">
+                    <div class="col">
+                        <a href={{firstVal}}>
+                            <i class='bx bx-first-page'></i>
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href={{prevVal}}>
+                            <i class='bx bx-skip-previous'></i>
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href={{nextVal}}>
+                            <i class='bx bx-skip-next'></i>
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a href={{lastVal}}>
+                            <i class='bx bx-last-page'></i>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -73,8 +104,9 @@
 
     </div>
 
-<hr>
-    <footer class="text-center font-weight-bolder">
+
+    <footer class="text-center font-weight-bolder mt-5 py-3">
+        <hr>
         Made By Maahi Patel
     </footer>
 

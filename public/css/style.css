@@ -1,0 +1,54 @@
+/* Global Setting */
+
+:root {
+    /* basic Colors */
+    --Blue-color: #4285F4;
+    --Red-color: #EA4335;
+    --Yellow-color: #FBBC04;
+    --Green-color: #34A853;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+}
+
+
+/* Scrollbar */
+
+::-webkit-scrollbar {
+    -webkit-transition: all .5s ease 0s;
+    -moz-transition: all .5s ease 0s;
+    -o-transition: all .5s ease 0s;
+    transition: all .5s ease 0s;
+    width: 10px;
+    background: 0 0
+}
+
+::-webkit-scrollbar-track {
+    background: 0 0
+}
+
+::-webkit-scrollbar-thumb {
+    background: #d0d0d0;
+    border-radius: 5px
+}
+
+
+/* A link Navigation Buttons */
+
+a {
+    font-size: 26px;
+    border-radius: 50%;
+    background-color: var(--Blue-color);
+    color: white;
+}
+
+i {
+    padding: 5px 6px;
+}
+
+a:hover {
+    text-decoration: none;
+}
