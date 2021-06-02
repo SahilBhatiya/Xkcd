@@ -1,0 +1,88 @@
+:root {
+    /* basic Colors */
+    --Blue-color: #4285F4;
+    --Dark-Blue-color: #1A73E8;
+    --Red-color: #EA4335;
+    --Yellow-color: #FBBC04;
+    --Green-color: #34A853;
+    --Dark-Green-color: #1E8E3E;
+}
+
+.mainbox {
+    margin: auto;
+    height: 80%;
+    width: 600px;
+    position: relative;
+}
+
+.err {
+    color: #000;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 11rem;
+    position: absolute;
+    left: 20%;
+    top: 8%;
+}
+
+.far {
+    position: absolute;
+    font-size: 8.5rem;
+    left: 42%;
+    top: 15%;
+    color: #000;
+}
+
+.err2 {
+    color: #000;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 11rem;
+    position: absolute;
+    left: 68%;
+    top: 8%;
+}
+
+.err3 {
+    color: #000;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 11rem;
+    position: absolute;
+    left: 42%;
+    top: 8%;
+}
+
+.msg {
+    text-align: center;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.6rem;
+    position: absolute;
+    left: 16%;
+    top: 45%;
+    width: 75%;
+}
+
+a {
+    text-decoration: none;
+    color: var(--Blue-color);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+::-webkit-scrollbar {
+    -webkit-transition: all .5s ease 0s;
+    -moz-transition: all .5s ease 0s;
+    -o-transition: all .5s ease 0s;
+    transition: all .5s ease 0s;
+    width: 10px;
+    background: 0 0
+}
+
+::-webkit-scrollbar-track {
+    background: 0 0
+}
+
+::-webkit-scrollbar-thumb {
+    background: #d0d0d0;
+    border-radius: 5px
+}
