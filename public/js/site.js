@@ -7,3 +7,9 @@ window.onscroll = () => {
         $(".Custom-Nav").css("opacity", "0");
     }
 };
+
+function RandomBtnClick() {
+    $.post("/GenerateRandom", (data) => {
+        window.location = `/${data}`;
+    });
+}
