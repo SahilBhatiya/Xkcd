@@ -73,7 +73,7 @@ h4 {
 
 a {
     font-size: 26px;
-    border-radius: 50%;
+    border-radius: 8px;
     background-color: var(--Blue-color);
     color: white;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
