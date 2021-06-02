@@ -14,6 +14,17 @@
     text-decoration: none;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+.smooth-transition {
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
 
 /* Scrollbar */
 
@@ -36,6 +47,25 @@
 }
 
 
+/*Global Glass Effect*/
+
+.Glass-Effect {
+    background: white;
+}
+
+@supports ((-webkit-backdrop-filter: blur(12px)) or (backdrop-filter: blur(12px))) {
+    .Glass-Effect {
+        background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.5)) !important;
+        backdrop-filter: blur(30px);
+        -webkit-backdrop-filter: blur(30px);
+    }
+}
+
+h3 {
+    text-shadow: 0px 7px 19px rgba(100, 100, 111, 0.2);
+}
+
+
 /* A link Navigation Buttons */
 
 a {
@@ -43,6 +73,7 @@ a {
     border-radius: 50%;
     background-color: var(--Blue-color);
     color: white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 i {
@@ -50,5 +81,32 @@ i {
 }
 
 a:hover {
+    background-color: var(--Green-color);
+    color: white;
     text-decoration: none;
+}
+
+.Custom-Nav {
+    opacity: 0;
+    bottom: -100px;
+    padding: 8px;
+    border-radius: 40px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.Custom-Nav:hover {
+    box-shadow: rgba(17, 12, 46, 0.10) 0px 48px 100px 0px;
+}
+
+.Custom-Nav a {
+    font-size: 30px;
+}
+
+.min-height-100 {
+    min-height: 500px;
+}
+
+.image-container {
+    border-radius: 16px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
