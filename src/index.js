@@ -1,6 +1,7 @@
 /* Basic Packages */
 const requests = require('requests');
 const http = require('http');
+const fs = require('fs');
 
 /* Express Package */
 const express = require('express');
@@ -17,6 +18,8 @@ app.set('port', process.env.PORT || port);
 /* Engine - Handlebars */
 app.set("view engine", "hbs");
 
+
+let ViewsCount = [];
 /* Api To Get Maxmimum Number Of Comics */
 const Api = `https://xkcd.com/info.0.json`;
 let Max_pages = 0;
@@ -27,18 +30,53 @@ let Max_pages = 0;
             const objData = JSON.parse(chunk);
             const ArrData = [objData];
             Max_pages = ArrData[0].num;
-
         })
         .on('end', (err) => {
             if (err) return console.log('connection closed due to errors', err);
-            console.log('end');
+            createArray(Max_pages);
+
+            console.log('Fetched Maxmium Pages : ' + Max_pages);
         });
 
 })();
 
+async function createArray(Max_pages) {
+    if (!CheckViewsFileExsits()) {
+        let ViewArray = [];
+        for (let i = 1; i <= Max_pages; i++) {
+            ViewArray.push({
+                View: 0
+            });
+        }
+        let data = JSON.stringify(ViewArray);
+        fs.writeFile("Views.json", data, (err) => {});
+    }
+    ReadViews();
+}
+
+function ReadViews() {
+    fs.readFile('Views.json', 'utf8', (err, data) => {
+        ViewsCount = JSON.parse(data);
+    });
+}
+
+async function WriteViews() {
+    let data = JSON.stringify(ViewsCount);
+    fs.writeFile("Views.json", data, (err) => {});
+}
+
+function CheckViewsFileExsits() {
+    if (fs.existsSync("./Views.json")) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 /* Api To Display Data On Website */
 function RenderWebsite(Id, res) {
     Id = Id == 404 ? 405 : Id;
+    ViewsCount[Id - 1].View += 1;
     const monthNames = ["January", "February", "March", "April", "May", "June",
         "July", "August", "September", "October", "November", "December"
     ];
@@ -55,12 +93,13 @@ function RenderWebsite(Id, res) {
                 CrrDate: `${objData.day}  ${monthNames[objData.month-1]}, ${objData.year}`,
                 Image: objData.img,
                 alt: objData.alt,
-                Max_value: Max_pages
+                Max_value: Max_pages,
+                Views: ViewsCount[Id - 1].View
             });
         })
         .on('end', (err) => {
             if (err) return console.log('connection closed due to errors', err);
-            console.log('end');
+            WriteViews();
         });
 }
 
@@ -82,7 +121,13 @@ app.get('/:Id', function(req, res) {
 /* Handle Errors (Unknown url and Not Integer) */
 app.get("*", (req, res) => {
     res.render("error");
-})
+});
+
+app.post('/GenerateRandom', (req, res) => {
+    const Id = Math.floor((Math.random() * Max_pages) + 1);
+    res.end(Id.toString());
+});
+
 
 /* To Create Server */
 http.createServer(app).listen(app.get('port'), function() {
