@@ -87,6 +87,9 @@ a i {
     footer {
         margin-top: 100px!important;
     }
+    #HideInSmall {
+        display: none;
+    }
 }
 
 a:hover {
