@@ -83,6 +83,12 @@ a i {
     padding: 5px 6px;
 }
 
+a i:hover {
+    background-color: var(--Green-color);
+    color: white;
+    text-decoration: none;
+}
+
 @media only screen and (max-width: 425px) {
     footer {
         margin-top: 100px!important;
@@ -92,22 +98,12 @@ a i {
     }
 }
 
-a:hover {
-    background-color: var(--Green-color);
-    color: white;
-    text-decoration: none;
-}
-
 .Custom-Nav {
     opacity: 0;
     bottom: -100px;
     padding: 8px;
     border-radius: 16px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-}
-
-.Custom-Nav a i {
-    top: 1.25px;
 }
 
 .Custom-Nav:hover {
