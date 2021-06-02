@@ -3,15 +3,18 @@
 :root {
     /* basic Colors */
     --Blue-color: #4285F4;
+    --Dark-Blue-color: #1A73E8;
     --Red-color: #EA4335;
     --Yellow-color: #FBBC04;
     --Green-color: #34A853;
+    --Dark-Green-color: #1E8E3E;
 }
 
 * {
     margin: 0px;
     padding: 0px;
     text-decoration: none;
+    outline: none;
 }
 
 html {
@@ -61,7 +64,7 @@ html {
     }
 }
 
-h3 {
+h4 {
     text-shadow: 0px 7px 19px rgba(100, 100, 111, 0.2);
 }
 
@@ -90,7 +93,7 @@ a:hover {
     opacity: 0;
     bottom: -100px;
     padding: 8px;
-    border-radius: 40px;
+    border-radius: 16px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
@@ -109,4 +112,36 @@ a:hover {
 .image-container {
     border-radius: 16px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+img {
+    max-width: 100%;
+}
+
+input {
+    border: 0px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 8px 26px;
+    border-radius: 8px;
+}
+
+input[type="number"]:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+}
+
+input[type="button"] {
+    background-color: var(--Green-color);
+    color: white;
+}
+
+input[type="button"]:hover {
+    background-color: var(--Dark-Green-color);
+}
+
+.Blue-btn {
+    background-color: var(--Blue-color)!important;
+}
+
+.Blue-btn:hover {
+    background-color: var(--Dark-Blue-color)!important;
 }

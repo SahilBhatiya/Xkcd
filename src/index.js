@@ -38,6 +38,10 @@ let Max_pages = 0;
 
 /* Api To Display Data On Website */
 function RenderWebsite(Id, res) {
+    Id = Id == 404 ? 405 : Id;
+    const monthNames = ["January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+    ];
     requests(`https://xkcd.com/${Id}/info.0.json`)
         .on('data', (chunk) => {
             const objData = JSON.parse(chunk);
@@ -48,7 +52,7 @@ function RenderWebsite(Id, res) {
                 prevVal: `\\${objData.num-1 >=1 ? objData.num-1 : 1}`,
                 nextVal: `\\${objData.num+1 <= Max_pages ? objData.num+1 : Max_pages}`,
                 lastVal: `\\${Max_pages}`,
-                CrrDate: `${objData.day} / ${objData.month} / ${objData.year}`,
+                CrrDate: `${objData.day}  ${monthNames[objData.month-1]}, ${objData.year}`,
                 Image: objData.img,
                 alt: objData.alt,
                 Max_value: Max_pages
