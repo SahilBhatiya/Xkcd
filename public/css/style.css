@@ -72,17 +72,20 @@ h4 {
 /* A link Navigation Buttons */
 
 a {
-    font-size: 26px;
-    border-radius: 8px;
+    position: relative;
+    font-size: 30px;
+    border-radius: 50%;
     background-color: var(--Blue-color);
     color: white;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    height: 36px;
-    width: 36px;
+    height: 28px;
+    width: 28px;
 }
 
-i {
-    padding: 5px 7px;
+a i {
+    position: relative;
+    top: 1px;
+    padding: 0px 6px;
 }
 
 a:hover {
@@ -99,12 +102,12 @@ a:hover {
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
-.Custom-Nav:hover {
-    box-shadow: rgba(17, 12, 46, 0.10) 0px 48px 100px 0px;
+.Custom-Nav a i {
+    top: 1.25px;
 }
 
-.Custom-Nav a {
-    font-size: 30px;
+.Custom-Nav:hover {
+    box-shadow: rgba(17, 12, 46, 0.10) 0px 48px 100px 0px;
 }
 
 .min-height-100 {
