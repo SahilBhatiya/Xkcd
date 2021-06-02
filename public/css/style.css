@@ -71,27 +71,21 @@ h4 {
 
 /* A link Navigation Buttons */
 
-a {
-    position: relative;
+a i {
     font-size: 30px;
     border-radius: 50%;
     background-color: var(--Blue-color);
     color: white;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    height: 30px;
-    width: 30px;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    padding: 5px 6px;
 }
 
-a i {
-    line-height: 30px;
-    position: relative;
-    top: 1px;
-    padding: 0px 6px;
-}
-
-@media screen and (max-witdth: 400px) {
-    a i {
-        top: 3px;
+@media only screen and (max-width: 425px) {
+    footer {
+        margin-top: 100px!important;
     }
 }
 
