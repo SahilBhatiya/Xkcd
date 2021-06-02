@@ -89,9 +89,9 @@ a i {
     padding: 0px 6px;
 }
 
-@media screen and (max-witdth: 360px) {
+@media screen and (max-witdth: 400px) {
     a i {
-        top: 2px;
+        top: 3px;
     }
 }
 
