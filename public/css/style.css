@@ -77,10 +77,12 @@ a {
     background-color: var(--Blue-color);
     color: white;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    height: 36px;
+    width: 36px;
 }
 
 i {
-    padding: 5px 6px;
+    padding: 5px 7px;
 }
 
 a:hover {
